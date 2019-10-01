@@ -1,0 +1,5 @@
+tasklist /V /FI "IMAGENAME eq chrome.exe"로 CPUTIME 값 얻은 다음
+taskkill /FI "CPUTIME eq 00:04:00" /IM chrome.exe  의 00:04:00대신 값을 넣어 종료되도록 한다.
+
+파일입출력으로 CPUTIME값만 char에 저장한다음
+taskkill /FI "CPUTIME eq 00:04:00" /IM chrome.exe  의 00:04:00부분 대신 char의 값을 넣어 system을 사용한다
