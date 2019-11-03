@@ -1,0 +1,6 @@
+https://asiatica-aramid.tistory.com/30
+(tasklist /V  이후 가로로 길게 펴기. 창 제목 확인)
+
+https://codeday.me/ko/qa/20190407/194419.html
+https://stackoverflow.com/questions/9166703/why-cant-i-use-wildcards-in-tasklist-fi-windowtitle-function-filter
+https://stackoverflow.com/questions/10948235/taskkill-window-spaces-in-its-title-name
