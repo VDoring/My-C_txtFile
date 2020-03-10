@@ -4,7 +4,7 @@
 
 int main()
 {
-	char special[1000] = { 0, }; //--여부를 확인하기 위한 문자열
+	char special[100] = { 0, }; //--여부를 확인하기 위한 문자열
 	char s1[1000] = "https://www.youtube.com/watch?v=NGM5G1mz8Vk  Zyg - Thoughts the Past --"; //--가 있는 링크
 
 	char *ptr = strtok(s1, " ");  // 먼저 " " 공백 문자를 기준으로 문자열을 자름, 포인터 반환
@@ -19,6 +19,9 @@ int main()
 	}
 
 	printf("%s", special); //<테스트코드> --여부 확인용
+
+	if (strcmp(special, "--") == 0) printf("\n\nOKOKOK");
+	else printf("\n\nNO");
 
 	return 0;
 }
