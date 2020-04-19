@@ -17,17 +17,18 @@ int wordCount;
 
 void insert(char *source, char *target) {
 	Word word;
-	strcpy(word.source, source);
-	strcpy(word.target, target);
-	words[wordCount++] = word;
+	strcpy(word.source, source); //:의 앞부분의 단어를 word.source에 목사
+	strcpy(word.target, target); //:의 뒷부분의 단어를 word.target에 복사
+	words[wordCount++] = word; //words 구조체에 word.source와 word.target의 값을 대입한다.
+								//(배열처럼 작동되는 모습이다.)
 }
 
 char* find(char *source) {
 	int i;
 	char *result = source;
 	for (i = 0; i < wordCount; i++) {
-		if (strcmp(words[i].source, source) == 0) {
-			return words[i].target; 
+		if (strcmp(words[i].source, source) == 0) { //words[i].source와 source의 내용이 같다면
+			return words[i].target; //words[i].target 반환
 		}
 	}
 	return result;
@@ -55,7 +56,7 @@ int main() {
 		printf("입력 파일이 존재하지 않습니다.2\n");
 	}
 
-	FILE *outputFile = NULL;
+	FILE *outputFile = NULL; //변환된 문자열을 저장하는 또다른 txt파일을 지정하는 파일포인터
 	char *outputFileName = strtok(inputFileName, "."); //inputFileName에 들은 파일이름(infile.txt)에서 .txt부분을 따로 분리하고 *outputFileName에 저장한다
 	strcat(outputFileName, ".out.txt"); //infile 파일이름에 .out.txt를 추가한다
 	outputFile = fopen(outputFileName, "w"); //infile.out.txt파일을 쓰기모드로 fopen하고 outputFile에 저장한다
@@ -82,9 +83,9 @@ int main() {
 		//단어 하나하나 접근한다
 		while (ptr != NULL) {
 			char *result = find(ptr);
-			printf("%s ", result);
-			fprintf(outputFile, "%s ", result);
-			ptr = strtok(NULL, " \n");
+			printf("%s ", result); //콘솔에 출력
+			fprintf(outputFile, "%s ", result); 
+			ptr = strtok(NULL, " \n"); //띄어쓰기 다음 단어 저장
 		}
 		printf("\n");
 		fprintf(outputFile, "\n");
